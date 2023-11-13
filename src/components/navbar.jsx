@@ -1,8 +1,8 @@
-import '../css/navbar.css'
+import './navbar.css'
 
 const NavBar = () => {
     return ( 
-            <navbar className="Navbar">
+            <nav className="Navbar">
                 <div className="nav-logo"></div>
                 <div className="nav-item-container">
                     <ul className="nav-items">
@@ -12,7 +12,7 @@ const NavBar = () => {
                     <li className="nav-item-4"><a href="/about">About</a></li>
                     </ul>
                 </div>
-            </navbar>
+            </nav>
 );
 }
 export default NavBar;
