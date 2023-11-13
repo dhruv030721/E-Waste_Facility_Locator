@@ -22,7 +22,7 @@
     width: 90%;
     border: none;
     color: #000;
-    font-size: medium;
+    font-size: larger;
 }
 
 textarea:focus, .Field:focus{
@@ -34,3 +34,13 @@ textarea:focus, .Field:focus{
     font-family: 'Poppins';
     font-size: medium;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }

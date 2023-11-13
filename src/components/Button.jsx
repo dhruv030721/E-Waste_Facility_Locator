@@ -1,10 +1,10 @@
 import "./Button.css"
 
 /* eslint-disable react/prop-types */
-const CustomButton = ({text}) => {
+const CustomButton = ({text, onclick}) => {
     return (
         <div className = "ButtonDiv">
-            <button className = "btn">{text}</button>
+            <button className = "btn" onClick={onclick}>{text}</button>
         </div>
     )
 }
