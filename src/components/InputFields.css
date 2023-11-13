@@ -1,0 +1,36 @@
+.InputFields {
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    min-width: 400px;
+}
+
+.FieldContainer {
+    display: flex;
+    padding: 10px;
+    min-width: 100%;
+}
+
+.Icon img{
+    padding-right: 10px;
+    height: 39px;
+    width: 39px;
+}
+
+.Field {
+    height: 100%;
+    width: 90%;
+    border: none;
+    color: #000;
+    font-size: medium;
+}
+
+textarea:focus, .Field:focus{
+    outline: none;
+}
+
+.Field::placeholder{
+    color: #000;
+    font-family: 'Poppins';
+    font-size: medium;
+}
