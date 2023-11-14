@@ -83,10 +83,8 @@ const SignupPage = () => {
   
   const handleConfirmPasswordChange = (e) => {
     const newConfirmPassword = e.target.value;
-    setConfirmPasswordValid(true)
+    setConfirmPasswordValid(newConfirmPassword)
     setConfirmPassword(newConfirmPassword)
-    if (newConfirmPassword === password) {
-    }
   };
 
   return (
