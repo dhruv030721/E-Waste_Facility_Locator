@@ -1,13 +1,13 @@
 /* eslint-disable react/prop-types */
 import "./InputFields.css"
 
-const Field = ({iconpath, placeholder, type, value, onChange, isValid }) => {
+const Field = ({iconpath, placeholder, type, value, onChange, isValid, validationMessage }) => {
     let idName = placeholder + "Field";
     const containerClass = isValid ? 'field-container' : 'field-container invalid';
 
     return (
-        <div className={`InputFields ${containerClass}`}>
-            <div className="FieldContainer">
+        <div className="InputFields">
+            <div className= {`FieldContainer ${containerClass}`}>
                 <div className = "Icon"> 
                     <img src={iconpath} alt='Icon'/>
                 </div>
@@ -22,6 +22,13 @@ const Field = ({iconpath, placeholder, type, value, onChange, isValid }) => {
                     />
                 </div>
             </div>
+            {!isValid && 
+                <div className="ValidationMessage">
+                    {validationMessage.split('.').map((sentence, index) => (
+                        <p key={index}>{sentence.trim()}</p>
+                    ))}
+                </div>
+            }
         </div>
     )
 }

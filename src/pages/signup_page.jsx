@@ -32,11 +32,11 @@ const SignupPage = () => {
   };
 
   const isPhoneNumberValid = (phoneNumber) => {
-    return /^\+?[0-9]{10,13}$/.test(phoneNumber);
+    return /^(0|91)?[6-9][0-9]{9}$/.test(phoneNumber);
   };
 
   const isEmailValid = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    return /^[a-z][^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
   const isPasswordValid = (password) => {
@@ -46,6 +46,7 @@ const SignupPage = () => {
 
   const handleNextStep = () => {
     if (step === 1 && name && isPhoneNumberValid(phone)) {
+      handleNameChange
       setStep((prevStep) => prevStep + 1);
     } else if (step === 2 && isUsernameValid(username) && isEmailValid(email)) {
       setStep((prevStep) => prevStep + 1);
@@ -62,6 +63,12 @@ const SignupPage = () => {
     navigate('/login');
   };
 
+  const handleNameChange = (e) => {
+    const newName = (e.target.value)
+    setName(newName);
+    setNameValid(newName);
+  }
+
   const handlePhoneChange = (e) => {
     const input = e.target.value.replace(/[^0-9+]/g, '');
     setPhone(input);
@@ -76,8 +83,10 @@ const SignupPage = () => {
   
   const handleConfirmPasswordChange = (e) => {
     const newConfirmPassword = e.target.value;
-    setConfirmPassword(newConfirmPassword);
-    setConfirmPasswordValid(isPasswordValid(newConfirmPassword));
+    setConfirmPasswordValid(true)
+    setConfirmPassword(newConfirmPassword)
+    if (newConfirmPassword === password) {
+    }
   };
 
   return (
@@ -88,24 +97,22 @@ const SignupPage = () => {
         {step === 1 && (
           <>
             <div className="Texts">
-              <span className="WelcomeText"> Step - 1 </span>
+              <span className="StepText"> Step - 1 </span>
               <span className="WeAreGladText">
                 {" "}
                 Let's begin a new journey with us!
               </span>
             </div>
-            <div className="fields">
+            <div className="Signupfields">
               <Field
                 iconpath={userIcon}
                 placeholder={"Name"}
                 type={"Text"}
                 value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                  setNameValid(!!e.target.value);
-                }}
+                onChange={handleNameChange}
                 isValid={nameValid}
-              />
+                validationMessage={"Can't be an empty."}
+                />
               <Field
                 iconpath={PhoneIcon}
                 placeholder={"Phone"}
@@ -113,6 +120,7 @@ const SignupPage = () => {
                 value={phone}
                 onChange={handlePhoneChange}
                 isValid={phoneValid}
+                validationMessage="Only Indian phone numbers are valid. Do not include + symbol. Can use 0 or 91 as before number"
               />
               <CustomButton text={"Next"} onclick={handleNextStep} />
             </div>
@@ -128,7 +136,7 @@ const SignupPage = () => {
               <span className="WelcomeText"> Step - 2 </span>
               <span className="WeAreGladText"> Now, let's add some details!</span>
             </div>
-            <div className="fields">
+            <div className="Signupfields">
               <Field 
                 iconpath={userIcon} 
                 placeholder={"Username"} 
@@ -138,7 +146,9 @@ const SignupPage = () => {
                   setUsername(e.target.value);
                   setUsernameValid(isUsernameValid(e.target.value));
                 }}
-                isValid={usernameValid} />
+                isValid={usernameValid} 
+                validationMessage={"Should start with lowercase only. Should not contain any space & Uppercase character."}
+              />
               <Field 
                 iconpath={EmailIcon} 
                 placeholder={"Email"} 
@@ -149,7 +159,8 @@ const SignupPage = () => {
                   setEmailValid(isEmailValid(e.target.value));
                 }}
                 isValid={emailValid}
-                />
+                validationMessage={"Should not contain any space & Uppercase character."}
+              />
               <CustomButton text={"Next"} onclick={handleNextStep} />
             </div>
           </>
@@ -162,7 +173,8 @@ const SignupPage = () => {
               <span className="WelcomeText"> Step - 3 </span>
               <span className="WeAreGladText"> Final step! Submit your details.</span>
             </div>
-            <div className="fields">
+            <div className="Signupfields">
+
               <Field 
                 iconpath={LockIcon} 
                 placeholder={"Password"} 
@@ -170,7 +182,9 @@ const SignupPage = () => {
                 value={password}
                 onChange={handlePasswordChange}
                 isValid={passwordValid}
+                validationMessage={"Password should be at least 8 characters long. Password should contain at least one of each. 1 Uppercase, Lowercase, Special characters, and a digit. "}
               />
+
               <Field 
                 iconpath={LockIcon} 
                 placeholder={"Confirm Password"} 
@@ -178,8 +192,11 @@ const SignupPage = () => {
                 value={confirmPassword}
                 onChange={handleConfirmPasswordChange}
                 isValid={confirmPasswordValid}
-                />
+                validationMessage={"Both passwords does not match."}
+              />
+
               <CustomButton text={"Submit"} onclick={handleNextStep} />
+
             </div>
           </>
         )}

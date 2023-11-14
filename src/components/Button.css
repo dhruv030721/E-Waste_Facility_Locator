@@ -12,13 +12,13 @@
     position: relative;
     z-index: 1;
     overflow: hidden;
-   }
+}
    
-   button:hover {
+.CustomBtn:hover {
     color: white;
-   }
+}
    
-   button:after {
+.CustomBtn:after {
     content: "";
     background: var(--primary-color);
     position: absolute;
@@ -29,10 +29,10 @@
     bottom: 0;
     transform: skewX(-45deg) scale(0, 1);
     transition: all 0.5s;
-   }
+}
    
-   button:hover:after {
+.CustomBtn:hover:after {
     transform: skewX(-45deg) scale(1, 1);
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
-   }
+}
