@@ -6,6 +6,7 @@
     color: black;
     border: none;
     border-radius: 10px;
+    font-family: var(--smooch-sans);
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;

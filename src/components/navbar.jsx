@@ -1,9 +1,10 @@
 import './navbar.css'
+import NormalButton from './normal_button';
 
 const NavBar = () => {
     return ( 
             <nav className="Navbar">
-                <div className="nav-logo"></div>
+                <div className="nav-logo">Logo</div>
                 <div className="nav-item-container">
                     <ul className="nav-items">
                     <li className="nav-item-1"><a href="/">Home</a></li>

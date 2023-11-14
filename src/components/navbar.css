@@ -11,17 +11,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 50px;
-    background: rgba( 255, 255, 255, 0.05 );
+    background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 15px );
-    -webkit-backdrop-filter: blur( 4px );
-    /* border-radius: 10px; */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20);
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 0px 0px 20px 20px;
+    z-index: 2;
 }
 
-.nav-logo {
-    border: 2px solid red;
-}
 
 .nav-items {
     display: flex;
@@ -38,10 +36,11 @@
 .nav-items li a {
     text-decoration: none;
     color: white;
-    font-family: var(--dm-sans);
+    font-family: var(--poppins);
 }
 
 .nav-items li:hover {
     transform: scale(1.2, 1.2);
     transition: transform 0.1s linear;
 }
+

@@ -1,5 +1,6 @@
 .InputFields {
     min-width: 400px;
+    font-family: var(--smooch-sans);
 }
 
 .FieldContainer {
@@ -22,9 +23,12 @@
 
 .Field {
     width: 90%;
+    height: 100%;
     border: none;
     color: #000;
-    font-size: larger;
+    font-size: medium;
+    background-color: white;
+    font-family: var(--smooch-sans);
 }
 
 textarea:focus, .Field:focus{
@@ -33,7 +37,7 @@ textarea:focus, .Field:focus{
 
 .Field::placeholder{
     color: #000;
-    font-family: 'Poppins';
+    font-family: var(--smooch-sans);
     font-size: medium;
 }
 

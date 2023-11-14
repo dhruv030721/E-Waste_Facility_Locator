@@ -3,11 +3,11 @@ import { useState } from "react";
 import "./signup_page.css";
 import NavBar from "../components/navbar";
 import Field from "../components/InputFields";
-import CustomButton from "../components/Button";
-import userIcon from "../assets/Images/UsernIcon.svg";
-import LockIcon from "../assets/Images/LockIcon.svg";
-import PhoneIcon from "../assets/Images/PhoneIcon.svg";
-import EmailIcon from "../assets/Images/EmailIcon.svg";
+import CustomButton from "../components/form_button";
+import userIcon from "../assets/images/UsernIcon.svg";
+import LockIcon from "../assets/images/LockIcon.svg";
+import PhoneIcon from "../assets/images/PhoneIcon.svg";
+import EmailIcon from "../assets/images/EmailIcon.svg";
 import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {

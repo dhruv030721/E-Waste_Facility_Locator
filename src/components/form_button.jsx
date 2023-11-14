@@ -1,4 +1,4 @@
-import "./Button.css"
+import "./form_button.css"
 
 /* eslint-disable react/prop-types */
 const CustomButton = ({text, onclick}) => {
