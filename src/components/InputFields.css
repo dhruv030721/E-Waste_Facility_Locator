@@ -12,6 +12,7 @@
 }
 
 .Icon img{
+    margin-top: 5px;
     padding-right: 10px;
     height: 39px;
     width: 39px;
@@ -42,5 +43,14 @@ input::-webkit-inner-spin-button {
 }
 
 input[type=number] {
-    -moz-appearance: textfield;
-  }
+    appearance: textfield;
+}
+
+.invalid {
+    border: 3px rgb(224, 55, 55) solid;
+}
+
+.invalid input{
+    color: red;
+}
+  
