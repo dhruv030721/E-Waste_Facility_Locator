@@ -1,12 +1,14 @@
 .InputFields {
-    background-color: #fff;
-    border-radius: 20px;
-    display: flex;
     min-width: 400px;
 }
 
 .FieldContainer {
+    max-height: 4em;
+    background-color: #fff;
+    border-radius: 20px;
     display: flex;
+    align-items: center;
+    border: 3px rgba(224, 55, 55, 0) solid;
     padding: 10px;
     min-width: 100%;
 }
@@ -19,7 +21,6 @@
 }
 
 .Field {
-    height: 100%;
     width: 90%;
     border: none;
     color: #000;
@@ -52,5 +53,17 @@ input[type=number] {
 
 .invalid input{
     color: red;
+}
+
+.ValidationMessage {
+    max-width: 400px;
+    color: #fff;
+    font-size: large;
+    margin-left: 25px;
+}
+
+.ValidationMessage {
+    white-space: pre-line;
+    content:"\A";
 }
   

@@ -13,11 +13,11 @@ const LoginPage = () => {
     const [passwordValid, setPasswordValid] = useState(true);
 
     const isUsernameValid = (username) => {
-        return /^[a-z0-9_]+$/.test(username);
+        return /^[a-z][a-z0-9_]*$/.test(username);
     };
 
     const isPasswordValid = (password) => {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
         return passwordRegex.test(password);
     };
 
@@ -36,7 +36,8 @@ const LoginPage = () => {
                     <span className = "WelcomeText"> Welcome </span>
                     <span className = "WeAreGladText"> We are glad to see you back with us!</span>
                 </div>
-                <div className = "fields">
+                <div className = "Loginfields">
+
                     <Field 
                         iconpath={userIcon} 
                         placeholder={"Username"} 
@@ -47,7 +48,9 @@ const LoginPage = () => {
                         setUsernameValid(isUsernameValid(e.target.value));
                         }}
                         isValid={usernameValid} 
+                        validationMessage={"Should start with lowercase only. Should not contain any space & Uppercase character."}
                     />
+
                     <Field 
                         iconpath={LockIcon} 
                         placeholder={"Password"} 
@@ -55,8 +58,11 @@ const LoginPage = () => {
                         value={password}
                         onChange={handlePasswordChange}
                         isValid={passwordValid}
+                        validationMessage={"Password should be at least 8 characters long. Password should contain at least one of each. 1 Uppercase, Lowercase, Special characters, and a digit. "}
                     />
+
                     <CustomButton text = {"Login"} />
+
                 </div>
                 <div className="SignupRedirectDiv">
                     <span className="ClickHereLinkText"> <a href="/signup">New Here? Click here to sign up.</a></span>
