@@ -4,8 +4,30 @@ import Field from "../components/InputFields"
 import CustomButton from "../components/Button"
 import userIcon from "../assets/Images/UsernIcon.svg"
 import LockIcon from "../assets/Images/LockIcon.svg"
+import { useState } from "react"
 
 const LoginPage = () => {
+    const [username, setUsername] = useState("");
+    const [usernameValid, setUsernameValid] = useState(true);
+    const [password, setPassword] = useState("");
+    const [passwordValid, setPasswordValid] = useState(true);
+
+    const isUsernameValid = (username) => {
+        return /^[a-z0-9_]+$/.test(username);
+    };
+
+    const isPasswordValid = (password) => {
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+        return passwordRegex.test(password);
+    };
+
+    const handlePasswordChange = (e) => {
+        const newPassword = e.target.value;
+        setPassword(newPassword);
+        setPasswordValid(isPasswordValid(newPassword));
+    };
+
+
     return (
         <div className = "LoginMainDiv">
             <NavBar /> 
@@ -15,8 +37,25 @@ const LoginPage = () => {
                     <span className = "WeAreGladText"> We are glad to see you back with us!</span>
                 </div>
                 <div className = "fields">
-                    <Field iconpath = {userIcon} placeholder={"Username"} type={"Text"}/>
-                    <Field iconpath = {LockIcon} placeholder={"Password"} type={"Password"}/>
+                    <Field 
+                        iconpath={userIcon} 
+                        placeholder={"Username"} 
+                        type={"Text"}
+                        value={username}
+                        onChange={(e) => {
+                        setUsername(e.target.value);
+                        setUsernameValid(isUsernameValid(e.target.value));
+                        }}
+                        isValid={usernameValid} 
+                    />
+                    <Field 
+                        iconpath={LockIcon} 
+                        placeholder={"Password"} 
+                        type={"Password"}
+                        value={password}
+                        onChange={handlePasswordChange}
+                        isValid={passwordValid}
+                    />
                     <CustomButton text = {"Login"} />
                 </div>
                 <div className="SignupRedirectDiv">

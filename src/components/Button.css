@@ -2,7 +2,7 @@
     width: 400px;
     height: 2.3em;
     margin-bottom: 0.5em;
-    background: #1ABF6B;
+    background: var(--secondary-color);
     color: black;
     border: none;
     border-radius: 10px;
@@ -20,7 +20,7 @@
    
    button:after {
     content: "";
-    background: #292F46;
+    background: var(--primary-color);
     position: absolute;
     z-index: -1;
     left: -20%;
