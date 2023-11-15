@@ -1,7 +1,7 @@
 import "./login_page.css"
 import NavBar from "../components/navbar"
 import Field from "../components/InputFields"
-import CustomButton from "../components/Button"
+import CustomButton from "../components/form_button"
 import userIcon from "../assets/Images/UsernIcon.svg"
 import LockIcon from "../assets/Images/LockIcon.svg"
 import { useState } from "react"

@@ -1,7 +1,9 @@
-import './home_title.css';
+import './home_section-1.css'
+import '../components/normal_button'
+import NormalButton from '../components/normal_button';
 
 
-const HomeTitle = () => {
+const HomeSection1 = () => {
     return ( 
         <>
             <div id="home-container">
@@ -11,12 +13,12 @@ const HomeTitle = () => {
                 <p>"For every device recycled with us, we break the chain of pollution to Earth. Together, let's turn e-waste into a promise for a cleaner planet. Act now for a sustainable tomorrow!"</p>
                 </div>
                 <div className="home-button-section">
-                <button id="get-news" className='btn'>Get News</button>
-                <button id="locate-facility" className='btn'>Locate Facility</button>
+                <NormalButton text={"Get News"}/>
+                <NormalButton text={"Locate Facility"}/>
                 </div>
             </div>
         </>
      );
 }
  
-export default HomeTitle;
+export default HomeSection1;
