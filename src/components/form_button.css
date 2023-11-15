@@ -1,9 +1,31 @@
+.ButtonDiv {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.PrimaryBgColor {
+    background-color: var(--primary-color);
+}
+
+.PrimaryBgColor:hover::after {
+    background-color: var(--secondary-color);
+}
+  
+.SecondaryBgColor {
+    background-color: var(--secondary-color);
+}
+
+.SecondaryBgColor:hover::after {
+    background-color: var(--primary-color);
+}
+
 .CustomBtn {
-    width: 400px;
+    width: 90%;
     height: 2.3em;
     margin-bottom: 0.5em;
-    background: var(--secondary-color);
-    color: black;
+    color: white;
     border: none;
     border-radius: 10px;
     font-family: var(--smooch-sans);
@@ -21,7 +43,6 @@
    
 .CustomBtn:after {
     content: "";
-    background: var(--primary-color);
     position: absolute;
     z-index: -1;
     left: -20%;
