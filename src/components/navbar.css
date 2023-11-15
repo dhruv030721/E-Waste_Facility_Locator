@@ -24,6 +24,7 @@
 .nav-items {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .nav-items li {
@@ -44,3 +45,10 @@
     transition: transform 0.1s linear;
 }
 
+.navBarLoginButton {
+    width: 5vw;
+    height: 4vh;
+    font-size: medium;
+    border-radius: 7px;
+    margin-bottom: 0;
+}
