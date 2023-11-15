@@ -8,7 +8,7 @@ import userIcon from "../assets/images/UsernIcon.svg";
 import LockIcon from "../assets/images/LockIcon.svg";
 import PhoneIcon from "../assets/images/PhoneIcon.svg";
 import EmailIcon from "../assets/images/EmailIcon.svg";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -46,11 +46,16 @@ const SignupPage = () => {
 
   const handleNextStep = () => {
     if (step === 1 && name && isPhoneNumberValid(phone)) {
-      handleNameChange
+      handleNameChange;
       setStep((prevStep) => prevStep + 1);
     } else if (step === 2 && isUsernameValid(username) && isEmailValid(email)) {
       setStep((prevStep) => prevStep + 1);
-    } else if (step === 3 && ( isPasswordValid(password) && isPasswordValid(confirmPassword) ) && password === confirmPassword) {
+    } else if (
+      step === 3 &&
+      isPasswordValid(password) &&
+      isPasswordValid(confirmPassword) &&
+      password === confirmPassword
+    ) {
       console.log(password, confirmPassword);
       setStep((prevStep) => prevStep + 1);
       handleSubmit();
@@ -60,17 +65,17 @@ const SignupPage = () => {
   const handleSubmit = () => {
     // Implement logic for submitting the form
     console.log("Form submitted!");
-    navigate('/login');
+    navigate("/login");
   };
 
   const handleNameChange = (e) => {
-    const newName = (e.target.value)
+    const newName = e.target.value;
     setName(newName);
     setNameValid(newName);
-  }
+  };
 
   const handlePhoneChange = (e) => {
-    const input = e.target.value.replace(/[^0-9+]/g, '');
+    const input = e.target.value.replace(/[^0-9+]/g, "");
     setPhone(input);
     setPhoneValid(isPhoneNumberValid(input));
   };
@@ -80,18 +85,17 @@ const SignupPage = () => {
     setPassword(newPassword);
     setPasswordValid(isPasswordValid(newPassword));
   };
-  
+
   const handleConfirmPasswordChange = (e) => {
     const newConfirmPassword = e.target.value;
-    setConfirmPasswordValid(newConfirmPassword)
-    setConfirmPassword(newConfirmPassword)
+    setConfirmPasswordValid(newConfirmPassword);
+    setConfirmPassword(newConfirmPassword);
   };
 
   return (
     <div className="MainSignupBg">
       <NavBar />
       <div className="signupCpntainer">
-
         {step === 1 && (
           <>
             <div className="Texts">
@@ -110,7 +114,7 @@ const SignupPage = () => {
                 onChange={handleNameChange}
                 isValid={nameValid}
                 validationMessage={"Can't be an empty."}
-                />
+              />
               <Field
                 iconpath={PhoneIcon}
                 placeholder={"Phone"}
@@ -120,10 +124,17 @@ const SignupPage = () => {
                 isValid={phoneValid}
                 validationMessage="Only Indian phone numbers are valid. Do not include + symbol. Can use 0 or 91 as before number"
               />
-              <CustomButton text={"Next"} onclick={handleNextStep} />
+              <CustomButton
+                text={"Next"}
+                onclick={handleNextStep}
+                bgColor={"secondary"}
+              />
             </div>
             <div className="LoginRedirectDiv">
-              <span className="ClickHereLinkText"> <a href="/login">Already have an account? Click here.</a></span>
+              <span className="ClickHereLinkText">
+                {" "}
+                <a href="/login">Already have an account? Click here.</a>
+              </span>
             </div>
           </>
         )}
@@ -132,24 +143,29 @@ const SignupPage = () => {
           <>
             <div className="Texts">
               <span className="WelcomeText"> Step - 2 </span>
-              <span className="WeAreGladText"> Now, let's add some details!</span>
+              <span className="WeAreGladText">
+                {" "}
+                Now, let's add some details!
+              </span>
             </div>
             <div className="Signupfields">
-              <Field 
-                iconpath={userIcon} 
-                placeholder={"Username"} 
+              <Field
+                iconpath={userIcon}
+                placeholder={"Username"}
                 type={"Text"}
                 value={username}
                 onChange={(e) => {
                   setUsername(e.target.value);
                   setUsernameValid(isUsernameValid(e.target.value));
                 }}
-                isValid={usernameValid} 
-                validationMessage={"Should start with lowercase only. Should not contain any space & Uppercase character."}
+                isValid={usernameValid}
+                validationMessage={
+                  "Should start with lowercase only. Should not contain any space & Uppercase character."
+                }
               />
-              <Field 
-                iconpath={EmailIcon} 
-                placeholder={"Email"} 
+              <Field
+                iconpath={EmailIcon}
+                placeholder={"Email"}
                 type={"Email"}
                 value={email}
                 onChange={(e) => {
@@ -157,35 +173,44 @@ const SignupPage = () => {
                   setEmailValid(isEmailValid(e.target.value));
                 }}
                 isValid={emailValid}
-                validationMessage={"Should not contain any space & Uppercase character."}
+                validationMessage={
+                  "Should not contain any space & Uppercase character."
+                }
               />
-              <CustomButton text={"Next"} onclick={handleNextStep} />
+              <CustomButton
+                text={"Next"}
+                onclick={handleNextStep}
+                bgColor={"secondary"}
+              />
             </div>
           </>
         )}
-
 
         {step === 3 && (
           <>
             <div className="Texts">
               <span className="WelcomeText"> Step - 3 </span>
-              <span className="WeAreGladText"> Final step! Submit your details.</span>
+              <span className="WeAreGladText">
+                {" "}
+                Final step! Submit your details.
+              </span>
             </div>
             <div className="Signupfields">
-
-              <Field 
-                iconpath={LockIcon} 
-                placeholder={"Password"} 
+              <Field
+                iconpath={LockIcon}
+                placeholder={"Password"}
                 type={"Password"}
                 value={password}
                 onChange={handlePasswordChange}
                 isValid={passwordValid}
-                validationMessage={"Password should be at least 8 characters long. Password should contain at least one of each. 1 Uppercase, Lowercase, Special characters, and a digit. "}
+                validationMessage={
+                  "Password should be at least 8 characters long. Password should contain at least one of each. 1 Uppercase, Lowercase, Special characters, and a digit. "
+                }
               />
 
-              <Field 
-                iconpath={LockIcon} 
-                placeholder={"Confirm Password"} 
+              <Field
+                iconpath={LockIcon}
+                placeholder={"Confirm Password"}
                 type={"Password"}
                 value={confirmPassword}
                 onChange={handleConfirmPasswordChange}
@@ -193,8 +218,11 @@ const SignupPage = () => {
                 validationMessage={"Both passwords does not match."}
               />
 
-              <CustomButton text={"Submit"} onclick={handleNextStep} />
-
+              <CustomButton
+                text={"Submit"}
+                onclick={handleNextStep}
+                bgColor={"secondary"}
+              />
             </div>
           </>
         )}

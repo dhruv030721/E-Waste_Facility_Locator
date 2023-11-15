@@ -12,7 +12,6 @@ const HomePage = () => {
         {/* <VideoBg /> */}
         <NavBar />
       </div>
-      <hr />
      <section id="homepage-section-2">
      <HomeSection2/>
      </section>
