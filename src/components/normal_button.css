@@ -11,10 +11,31 @@
     backdrop-filter: blur( 7px );
     -webkit-backdrop-filter: blur( 7px );
     border-radius: 15px;
-    border: 2px solid rgba( 255, 255, 255, 0.18 );
+    border: 2px solid rgba( 255, 255, 255, 0.5 );
+    cursor: pointer;
+    overflow: hidden;
 }
-
+/* 
 .btn:hover{
     transform: translateY(-10px);
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+} */
+
+.btn:before{
+    content: "";
+    background-image: linear-gradient(to left,var(--primary-color), var(--secondary-color)) ;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -20%;
+    right: -20%;
+    transform: skewX(-45deg) scale(0,1);
+    
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+.btn:hover:before{
+    transform: skewX(-45deg) scale(1,1);
+    transition: all 0.5s;
 }
