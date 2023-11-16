@@ -1,0 +1,29 @@
+.sideBarOption.active {
+  border-left: 5px solid #1abf6b;
+}
+
+.sideBarOption {
+  width: 20vw;
+}
+
+.OptionimageTextDiv {
+  margin-left: 20%;
+}
+
+.OptionimageTextDiv a {
+  display: flex;
+  align-items: center;
+  height: 3em;
+  color: white;
+  text-decoration: none !important;
+}
+
+.sideBarOption img {
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.optionText {
+  margin-left: 20%;
+  font-weight: 600;
+}

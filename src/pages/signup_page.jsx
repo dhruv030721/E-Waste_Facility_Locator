@@ -108,15 +108,17 @@ const SignupPage = () => {
           username,
           email,
           password,
-        },{
+        },
+        {
           headers: headers,
-        });
-  
-        console.log("HTTP POST Request Response:", response.data);
-      } catch (error) {
-        console.error("Error submitting form:", error);
-      }
-    };
+        }
+      );
+
+      console.log("HTTP POST Request Response:", response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   return (
     <div className="MainSignupBg">
