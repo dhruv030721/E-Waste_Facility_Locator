@@ -2,7 +2,7 @@
 // SideBar.js
 
 import CustomButton from "./form_button";
-import DashboardOptions from "./dashboard_options";
+import SidebarTabs from "./Sidebar_Tabs";
 import userAvatar from "../assets/Images/userAvatar.png";
 import "./sideBar.css";
 
@@ -21,7 +21,7 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
         </div>
         <div className="DashboardPagesDiv">
           {dashboardOptions.map((option) => (
-            <DashboardOptions
+            <SidebarTabs
               key={option.nextRoute} // Assuming nextRoute is unique
               imagePath={option.imagePath}
               optionText={option.optionText}

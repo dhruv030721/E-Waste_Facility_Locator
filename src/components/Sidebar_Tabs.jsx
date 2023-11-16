@@ -1,9 +1,9 @@
 /* eslint-disable react/display-name */
 /* eslint-disable react/prop-types */
 import React from "react";
-import "./dashboard_options.css";
+import "./Sidebar_Tabs.css";
 
-const DashboardOptions = React.memo(
+const SidebarTabs = React.memo(
   ({ className, imagePath, optionText, nextRoute, isActive, onClick }) => {
     return (
       <div
@@ -21,4 +21,4 @@ const DashboardOptions = React.memo(
   }
 );
 
-export default DashboardOptions;
+export default SidebarTabs;

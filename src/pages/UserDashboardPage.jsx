@@ -9,7 +9,6 @@ const UserDashboardPage = () => {
   const [activeTab, setActiveTab] = useState("/UserDashboard");
 
   const handleTabClick = (tabName) => {
-    console.log("Tab clicked:", tabName);
     setActiveTab(tabName);
   };
 
