@@ -1,5 +1,4 @@
 import SideBar from "../components/sideBar";
-<<<<<<< HEAD
 import dashboardIcon from "../assets/Images/DashboardIcon.svg";
 import locationIcon from "../assets/Images/locationIcon.png";
 import settingsIcon from "../assets/Images/settingsIcon.svg";
@@ -40,13 +39,6 @@ const UserDashboardPage = () => {
           dashboardOptions={dashboardOptions}
         />
       </div>
-=======
-
-const UserDashboardPage = () => {
-  return (
-    <div className="UserDashboardMainDiv">
-      <SideBar />
->>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
     </div>
   );
 };

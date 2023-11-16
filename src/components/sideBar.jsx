@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 /* eslint-disable react/prop-types */
-// SideBar.js
 
 import CustomButton from "./form_button";
 import SidebarTabs from "./Sidebar_Tabs";
@@ -33,31 +31,10 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
           ))}
         </div>
       </div>
-=======
-import CustomButton from "./form_button";
-import "./sideBar.css";
-const SideBar = () => {
-  return (
-    <div className="SidebarMainDiv">
-      <div className="LogoDiv">
-        <img src="" alt="" />
-        <span>Logo</span>
-      </div>
-      <div className="UserDetailsDiv">
-        <img src="" alt="" />
-        <span>Aetom</span>
-        <span>Role</span>
-      </div>
-      <div className="DashboardPagesDiv"></div>
->>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
       <div className="LogoutBtnDIv">
         <CustomButton text={"Logout"} className={"LogOutButton"} />
       </div>
     </div>
   );
 };
-<<<<<<< HEAD
-
-=======
->>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
 export default SideBar;

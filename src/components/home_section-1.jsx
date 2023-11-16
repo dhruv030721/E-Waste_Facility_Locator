@@ -1,9 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
 import "./home_section-1.css";
-<<<<<<< HEAD
-import "../components/normal_button";
-=======
->>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
 import CustomButton from "./form_button";
 
 const HomeSection1 = () => {
