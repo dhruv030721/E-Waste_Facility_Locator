@@ -30,7 +30,6 @@ const NavBar = () => {
       <div className="nav-logo">Logo</div>
       <div className="nav-item-container">
         <ul className="nav-items">
-<<<<<<< HEAD
           <li id="nav-item-1">
             <a onClick = {handleHome}>Home</a>
           </li>
@@ -42,19 +41,6 @@ const NavBar = () => {
           </li>
           <li id="nav-item-4">
             <a onClick = {handleAbout}>About</a>
-=======
-          <li className="nav-item-1">
-            <a href="/">Home</a>
-          </li>
-          <li className="nav-item-2">
-            <a href="/locate_facility">Locate Facility</a>
-          </li>
-          <li className="nav-item-3">
-            <a href="/contact">Contact</a>
-          </li>
-          <li className="nav-item-4">
-            <a href="/about">About</a>
->>>>>>> origin/main
           </li>
           <li className="nav-item-5">
             <CustomButton
