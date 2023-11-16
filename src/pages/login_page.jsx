@@ -48,6 +48,10 @@ const LoginPage = () => {
     }
   };
 
+  const handleSignup = () => {
+    navigate("/signup");
+  }
+
   return (
     <div className="LoginMainDiv">
       <NavBar />
@@ -105,7 +109,7 @@ const LoginPage = () => {
         </div>
         <div className="SignupRedirectDiv">
           <span className="ClickHereLinkText">
-            <a href="/signup">New Here? Click here to sign up.</a>
+            <a onClick={handleSignup}>New Here? Click here to sign up.</a>
           </span>
         </div>
       </div>

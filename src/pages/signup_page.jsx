@@ -94,6 +94,9 @@ const SignupPage = () => {
     setConfirmPassword(newConfirmPassword);
   };
 
+  const handleLogin = () => {
+    navigate('/login');
+  }
     const handleHTTPPostRequest = async () => {
       try {
         const headers = {
@@ -156,7 +159,7 @@ const SignupPage = () => {
             <div className="LoginRedirectDiv">
               <span className="ClickHereLinkText">
                 {" "}
-                <a href="/login">Already have an account? Click here.</a>
+                <a onClick={handleLogin}>Already have an account? Click here.</a>
               </span>
             </div>
           </>

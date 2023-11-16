@@ -1,7 +1,28 @@
 import './footer.css'
-
+import { useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+    let navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate("/login");
+    };
+
+    const handleHome = () => {
+        navigate("/");
+    };
+
+    const handleContact = () => {
+        navigate("/contact");
+    };
+
+    const handleAbout = () => {
+        navigate("/about");
+    };
+
+    const handleLocateFacility = () => {
+        navigate("/locateFacility");
+    };
     return ( 
         <>
                 <div className="grid-container">
@@ -12,11 +33,11 @@ const Footer = () => {
                         </div>
                         <div className="grid-item-container">
                             <ul>
-                                <li className="grid-items"><a href="">Home</a></li>
-                                <li className="grid-items"><a href="">Locate</a></li>
-                                <li className="grid-items"><a href="">News</a></li>
-                                <li className="grid-items"><a href="">About</a></li>
-                                <li className="grid-items"><a href="">Contact</a></li>
+                                <li className="grid-items"><a href="" onClick={handleHome}>Home</a></li>
+                                <li className="grid-items"><a href="" onClick={handleLocateFacility}>Locate</a></li>
+                                <li className="grid-items"><a href="" >News</a></li>
+                                <li className="grid-items"><a href="" onClick={handleAbout}>About</a></li>
+                                <li className="grid-items"><a href="" onClick={handleContact}>Contact</a></li>
                             </ul>
                         </div>
                     </div>
