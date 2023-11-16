@@ -94,26 +94,30 @@ const SignupPage = () => {
     setConfirmPassword(newConfirmPassword);
   };
 
-    const handleHTTPPostRequest = async () => {
-      try {
-        const headers = {
-          "Content-Type": "application/json",
-        };
-        const response = await axios.post("http://127.0.0.1:8000/api/v1/signup", {
+  const handleHTTPPostRequest = async () => {
+    try {
+      const headers = {
+        "Content-Type": "application/json",
+      };
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/v1/signup",
+        {
           name,
           phone,
           username,
           email,
           password,
-        },{
+        },
+        {
           headers: headers,
-        });
-  
-        console.log("HTTP POST Request Response:", response.data);
-      } catch (error) {
-        console.error("Error submitting form:", error);
-      }
-    };
+        }
+      );
+
+      console.log("HTTP POST Request Response:", response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
 
   return (
     <div className="MainSignupBg">
