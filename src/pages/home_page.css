@@ -13,3 +13,8 @@
     height: 110vh;
     background: url('../assets/images/home_section2_bg.png') no-repeat center center/cover;
 }
+
+#homepage-section-3{
+    width: 100%;
+    background-color: var(--primary-bg-color);
+}

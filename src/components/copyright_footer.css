@@ -1,0 +1,26 @@
+#copyright-footer-container{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--primary-bg-color);
+    font-family: var(--poppins);
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright-text p {
+    text-align: center;
+}
+
+.socialmedia-container{
+    margin-left: 50px;
+}
+
+.socialmedia-container ul{
+    display: flex;
+}
+
+.socialmedia-container ul li{
+    list-style: none;
+    margin-left: 5px;
+    cursor: pointer;
+}

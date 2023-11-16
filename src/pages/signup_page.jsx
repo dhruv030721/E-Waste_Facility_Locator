@@ -9,6 +9,10 @@ import LockIcon from "../assets/images/LockIcon.svg";
 import PhoneIcon from "../assets/images/PhoneIcon.svg";
 import EmailIcon from "../assets/images/EmailIcon.svg";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import axios from "axios";
+>>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -64,6 +68,7 @@ const SignupPage = () => {
 
   const handleSubmit = () => {
     // Implement logic for submitting the form
+    handleHTTPPostRequest();
     console.log("Form submitted!");
     navigate("/login");
   };
@@ -91,6 +96,27 @@ const SignupPage = () => {
     setConfirmPasswordValid(newConfirmPassword);
     setConfirmPassword(newConfirmPassword);
   };
+
+    const handleHTTPPostRequest = async () => {
+      try {
+        const headers = {
+          "Content-Type": "application/json",
+        };
+        const response = await axios.post("http://127.0.0.1:8000/api/v1/signup", {
+          name,
+          phone,
+          username,
+          email,
+          password,
+        },{
+          headers: headers,
+        });
+  
+        console.log("HTTP POST Request Response:", response.data);
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      }
+    };
 
   return (
     <div className="MainSignupBg">

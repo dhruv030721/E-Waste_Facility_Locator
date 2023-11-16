@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .SidebarMainDiv {
   color: white;
   background-color: #1f1f3c;
@@ -43,3 +44,8 @@
   min-width: 5em;
   font-size: medium;
 }
+=======
+.LogOutButton {
+    background-color: #920505 !important;
+}
+>>>>>>> 3aeccaafdea56bb66e6adfb091871b57731998b2
