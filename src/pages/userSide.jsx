@@ -5,6 +5,7 @@ import settingsIcon from "../assets/Images/settingsIcon.svg";
 import "./userSide.css";
 import { useState } from "react";
 import UserDashboard from "../components/UserDashboard";
+import Locate from "./Locate";
 
 const UserSide = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");

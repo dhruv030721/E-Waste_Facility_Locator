@@ -1,5 +1,5 @@
-const userLocate = () => {
+const Locate = () => {
   return <span>Hello World!</span>;
 };
 
-export default userLocate;
+export default Locate;
