@@ -1,22 +1,8 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import "./dropdownCommon.css";
 import ArrowIcon from "../assets/Images/ArrowIcon.svg";
 import checkIcon from "../assets/Images/checkIcon.png";
-
-function useClickOutside(ref, onClickOutside) {
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        onClickOutside();
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref, onClickOutside]);
-}
 
 const DropdownCommon = ({
   selectedOption,
@@ -43,10 +29,11 @@ const DropdownCommon = ({
     return optionMatched.title;
   };
 
-  useClickOutside(dropdownRef, handleDropdownOpen);
-
   return (
-    <div className="dropdown-container" ref={dropdownRef}>
+    <div
+      className={`dropdown-container ${isDropdownOpen ? "expanded" : ""}`}
+      ref={dropdownRef}
+    >
       <div className="dropdown-btn" onClick={handleDropdownOpen}>
         <div className="dropdown-label">
           <label>

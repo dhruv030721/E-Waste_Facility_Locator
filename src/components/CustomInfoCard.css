@@ -1,0 +1,31 @@
+.commonCardContainer {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  width: 25%;
+  min-height: 20vh;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.CustomCardHeadings > span {
+  font-size: large;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+
+.CustomCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 10%;
+}
+
+.CustomCard > span {
+  font-family: "poppins";
+  font-size: x-large;
+  font-weight: bold;
+}

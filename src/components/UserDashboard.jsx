@@ -1,5 +1,9 @@
 import { useState } from "react";
 import DropdownCommon from "./DropdownCommon";
+import CustomInfoCard from "./CustomInfoCard";
+import RewardsIcon from "../assets/Images/RewardsIcon.svg";
+import FacilityIcon from "../assets/Images/FacilityIcon.svg";
+import "./UserDashboard.css";
 
 const UserDashboard = () => {
   const [selectedTimeFrame, setSelectedTimeFrame] = useState("last_seven_days");
@@ -22,6 +26,21 @@ const UserDashboard = () => {
         options={timeFrameOptions}
         title="Timeframe"
       />
+
+      <div className="InfoCardsDiv">
+        <CustomInfoCard
+          HeadingText={"Reward points"}
+          ImagePath={RewardsIcon}
+          texts={"82"}
+        />
+        <CustomInfoCard HeadingText={"E-Waste Submitted"} texts={"3.82 kg"} />
+        <CustomInfoCard
+          HeadingText={"Facilities Visited"}
+          ImagePath={FacilityIcon}
+          texts={"3"}
+        />
+        <CustomInfoCard HeadingText={"E-Waste Submitted"} texts={"4.89 kg"} />
+      </div>
     </div>
   );
 };
