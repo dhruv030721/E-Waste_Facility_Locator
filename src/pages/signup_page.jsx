@@ -10,6 +10,8 @@ import PhoneIcon from "../assets/images/PhoneIcon.svg";
 import EmailIcon from "../assets/images/EmailIcon.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -58,16 +60,18 @@ const SignupPage = () => {
       password === confirmPassword
     ) {
       console.log(password, confirmPassword);
-      setStep((prevStep) => prevStep + 1);
+      // setStep((prevStep) => prevStep + 1);
       handleSubmit();
     }
   };
 
   const handleSubmit = () => {
-    // Implement logic for submitting the form
-    handleHTTPPostRequest();
+    toast.promise(handleHttpSignup, {
+      pending: "Processing...",
+      success: "Signup Sucessful",
+      error: "Signup Failed"
+    })
     console.log("Form submitted!");
-    navigate("/login");
   };
 
   const handleNameChange = (e) => {
@@ -94,29 +98,51 @@ const SignupPage = () => {
     setConfirmPassword(newConfirmPassword);
   };
 
-  const handleHTTPPostRequest = async () => {
-    try {
-      const headers = {
-        "Content-Type": "application/json",
-      };
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/v1/signup",
-        {
-          name,
-          phone,
-          username,
-          email,
-          password,
-        },
-        {
-          headers: headers,
-        }
-      );
+  const handleLogin = () => {
+    navigate('/login')
+  }
 
-      console.log("HTTP POST Request Response:", response.data);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
+  const handleHttpSignup = async () => {
+    return new Promise(async(resolve, reject) => {
+      try {
+        const headers = {
+          "Content-Type": "application/json",
+        };
+  
+        const response = await axios.post(
+          "http://127.0.0.1:8000/api/v1/signup",
+          {
+            name,
+            phone,
+            username,
+            email,
+            password,
+          },
+          {
+            headers: headers,
+          }
+        );
+
+  
+        if (response.status === 201) {
+          setTimeout(() => {
+            navigate("/login");
+          }, 4000);
+          resolve(response.data);
+        } else {
+          reject("Signup Failed");
+        }
+  
+        console.log(response.status);
+        console.log("HTTP POST Request Response:", response.data);
+      } catch (error) {
+        // Hide waiting toast on error
+        toast.dismiss(waitingToastId);
+        toast.error("Error submitting form");
+        console.error("Error submitting form:", error);
+        reject(error);
+      }
+    })
   };
 
   return (
@@ -160,7 +186,7 @@ const SignupPage = () => {
             <div className="LoginRedirectDiv">
               <span className="ClickHereLinkText">
                 {" "}
-                <a href="/login">Already have an account? Click here.</a>
+                <a onClick={handleLogin}>Already have an account? Click here.</a>
               </span>
             </div>
           </>
@@ -254,6 +280,7 @@ const SignupPage = () => {
           </>
         )}
       </div>
+      <ToastContainer/>
     </div>
   );
 };

@@ -9,22 +9,38 @@ const NavBar = () => {
     navigate("/login");
   };
 
+  const handleHome = () => {
+    navigate("/");
+  }
+
+  const handleContact = () => {
+    navigate("/contact");
+  }
+
+  const handleAbout = () => {
+    navigate("/about");
+  }
+
+  const handleLocateFacility = () => {
+    navigate("/locateFacility");
+  }
+
   return (
     <nav className="Navbar">
       <div className="nav-logo">Logo</div>
       <div className="nav-item-container">
         <ul className="nav-items">
-          <li className="nav-item-1">
-            <a href="/">Home</a>
+          <li id="nav-item-1">
+            <a onClick = {handleHome}>Home</a>
           </li>
-          <li className="nav-item-2">
-            <a href="/locate_facility">Locate Facility</a>
+          <li id="nav-item-2">
+            <a onClick = {handleLocateFacility}>Locate Facility</a>
           </li>
-          <li className="nav-item-3">
-            <a href="/contact">Contact</a>
+          <li id="nav-item-3">
+            <a onClick= {handleContact}>Contact</a>
           </li>
-          <li className="nav-item-4">
-            <a href="/about">About</a>
+          <li id="nav-item-4">
+            <a onClick = {handleAbout}>About</a>
           </li>
           <li className="nav-item-5">
             <CustomButton

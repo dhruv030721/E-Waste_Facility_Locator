@@ -3,6 +3,9 @@ import HomePage from "./pages/home_page";
 import LoginPage from "./pages/login_page";
 import SignupPage from "./pages/signup_page";
 import UserSide from "./pages/userSide";
+import AboutPage from "./pages/about_page";
+import ContactPage from "./pages/contact_page";
+import LocateFacilityPage from "./pages/locate_facility";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,18 @@ const router = createBrowserRouter([
   {
     path: "/UserSide",
     element: <UserSide />,
+  },
+  {
+    path: "/contact",
+    element: <ContactPage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
+  },
+  {
+    path: "/locateFacility",
+    element: <LocateFacilityPage />,
   },
 ]);
 

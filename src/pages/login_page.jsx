@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import "./login_page.css";
 import NavBar from "../components/navbar";
 import Field from "../components/InputFields";
@@ -6,6 +7,9 @@ import userIcon from "../assets/Images/UsernIcon.svg";
 import LockIcon from "../assets/Images/LockIcon.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -46,6 +50,51 @@ const LoginPage = () => {
     } else {
       setErrorMsgClass("displayErrorMsg");
     }
+    toast.promise(handleHttpLogin, {
+      pending: "Processing...",
+      success: "Login Sucessful",
+      error: "Login Failed",
+    });
+    console.log("Login Processing");
+  };
+
+  const handleSignup = () => {
+    navigate("/signup");
+  };
+
+  const handleHttpLogin = () => {
+    return new Promise(async (resolve, reject) => {
+      try {
+        const headers = {
+          "Content-Type": "application/json",
+        };
+
+        const response = await axios.post(
+          "http://127.0.0.1:8000/api/v1/login",
+          {
+            username,
+            password,
+          },
+          {
+            headers: headers,
+          }
+        );
+
+        if (response.status === 200) {
+          setTimeout(() => {
+            navigate("/");
+          }, 4000);
+          resolve(response.data);
+        } else {
+          reject("Login Failed");
+        }
+
+        console.log(response.status);
+        console.log("HTTP POST Request Response:", response.data);
+      } catch (error) {
+        reject(error);
+      }
+    });
   };
 
   return (
@@ -105,10 +154,11 @@ const LoginPage = () => {
         </div>
         <div className="SignupRedirectDiv">
           <span className="ClickHereLinkText">
-            <a href="/signup">New Here? Click here to sign up.</a>
+            <a onClick={handleSignup}>New Here? Click here to sign up.</a>
           </span>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
