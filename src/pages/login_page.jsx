@@ -37,9 +37,9 @@ const LoginPage = () => {
 
     if (isUsernameValidResult && isPasswordValidResult) {
       if (username === "aetom23" && password === "Aetom@1234") {
-        navigate("/UserDashboard");
+        navigate("/UserSide");
       } else if (username === "anasvhora8" && password === "Anas@2906") {
-        navigate("/AdminDashboard");
+        navigate("/AdminSide");
       } else {
         setErrorMsgClass("displayErrorMsg");
       }

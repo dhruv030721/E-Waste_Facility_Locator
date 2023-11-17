@@ -1,0 +1,30 @@
+.time-frame-container {
+  background-color: white;
+  max-width: max-content;
+  color: black;
+  font-weight: 600;
+  margin-top: 2%;
+  border-radius: 5px;
+}
+
+label {
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 100;
+  margin-left: 10px;
+  font-size: large;
+  font-family: "poppins", "smooch sans";
+}
+
+.time-frame-container select {
+  height: 4vh;
+  background-color: white;
+  border: 0px white;
+  color: black;
+  margin-right: 10px;
+  font-size: medium;
+  font-family: "poppins", "smooch sans";
+}
+
+.time-frame-container select:focus:active {
+  border: none;
+}
