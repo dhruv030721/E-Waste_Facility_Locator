@@ -2,13 +2,16 @@ import SideBar from "../components/sideBar";
 import dashboardIcon from "../assets/Images/DashboardIcon.svg";
 import locationIcon from "../assets/Images/locationIcon.png";
 import settingsIcon from "../assets/Images/settingsIcon.svg";
-import "./userDashboardPage.css";
+import "./userSide.css";
 import { useState } from "react";
+import UserDashboard from "../components/UserDashboard";
+import Locate from "./Locate";
 
-const UserDashboardPage = () => {
-  const [activeTab, setActiveTab] = useState("/UserDashboard");
+const UserSide = () => {
+  const [activeTab, setActiveTab] = useState("Dashboard");
 
   const handleTabClick = (tabName) => {
+    console.log("Tab clicked:", tabName);
     setActiveTab(tabName);
   };
 
@@ -16,31 +19,36 @@ const UserDashboardPage = () => {
     {
       imagePath: dashboardIcon,
       optionText: "Dashboard",
-      nextRoute: "/UserDashboard",
     },
     {
       imagePath: locationIcon,
       optionText: "Locate",
-      nextRoute: "/UserLocate",
     },
     {
       imagePath: settingsIcon,
       optionText: "Settings",
-      nextRoute: "/UserSettings",
     },
   ];
 
   return (
-    <div className="UserDashboardMainDiv">
-      <div className="SideBarDashboardContainer">
+    <div className="UserSide">
+      <div className="SideBarContainer">
         <SideBar
           activeTab={activeTab}
           handleTabClick={handleTabClick}
           dashboardOptions={dashboardOptions}
         />
       </div>
+      <div className="MainContent">
+        <div className="TabHeading">
+          <span>{activeTab}</span>
+        </div>
+        {activeTab === "Dashboard" && <UserDashboard />}
+        {activeTab === "Locate" && <Locate />}
+        {activeTab === "Settings" && <UserSettings />}
+      </div>
     </div>
   );
 };
 
-export default UserDashboardPage;
+export default UserSide;
