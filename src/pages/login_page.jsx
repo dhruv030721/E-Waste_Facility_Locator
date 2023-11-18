@@ -1,3 +1,4 @@
+/* eslint-disable no-async-promise-executor */
 import "./login_page.css";
 import NavBar from "../components/navbar";
 import Field from "../components/InputFields";
@@ -6,8 +7,8 @@ import userIcon from "../assets/Images/UsernIcon.svg";
 import LockIcon from "../assets/Images/LockIcon.svg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 
 const LoginPage = () => {
@@ -35,37 +36,50 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
+    const isUsernameValidResult = isUsernameValid(username);
+    const isPasswordValidResult = isPasswordValid(password);
+
+    if (isUsernameValidResult && isPasswordValidResult) {
+      if (username === "aetom23" && password === "Aetom@1234") {
+        navigate("/UserSide");
+      } else if (username === "anasvhora8" && password === "Anas@2906") {
+        navigate("/AdminSide");
+      } else {
+        setErrorMsgClass("displayErrorMsg");
+      }
+    } else {
+      setErrorMsgClass("displayErrorMsg");
+    }
     toast.promise(handleHttpLogin, {
       pending: "Processing...",
       success: "Login Sucessful",
-      error: "Login Failed"
-    })
-    console.log('Login Processing')
+      error: "Login Failed",
+    });
+    console.log("Login Processing");
   };
 
   const handleSignup = () => {
     navigate("/signup");
-  }
+  };
 
   const handleHttpLogin = () => {
-    return new Promise(async(resolve,reject) => {
+    return new Promise(async (resolve, reject) => {
       try {
         const headers = {
           "Content-Type": "application/json",
         };
-  
+
         const response = await axios.post(
           "http://127.0.0.1:8000/api/v1/login",
           {
-            username, 
-            password
+            username,
+            password,
           },
           {
             headers: headers,
           }
         );
 
-  
         if (response.status === 200) {
           setTimeout(() => {
             navigate("/");
@@ -74,15 +88,14 @@ const LoginPage = () => {
         } else {
           reject("Login Failed");
         }
-  
+
         console.log(response.status);
         console.log("HTTP POST Request Response:", response.data);
       } catch (error) {
         reject(error);
       }
-    })
+    });
   };
-
 
   return (
     <div className="LoginMainDiv">
@@ -145,7 +158,7 @@ const LoginPage = () => {
           </span>
         </div>
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };

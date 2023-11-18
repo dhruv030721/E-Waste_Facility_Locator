@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 import CustomButton from "./form_button";
 import SidebarTabs from "./Sidebar_Tabs";
 import userAvatar from "../assets/Images/userAvatar.png";
@@ -21,12 +20,11 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
         <div className="DashboardPagesDiv">
           {dashboardOptions.map((option) => (
             <SidebarTabs
-              key={option.nextRoute} // Assuming nextRoute is unique
+              key={option.optionText}
               imagePath={option.imagePath}
               optionText={option.optionText}
-              nextRoute={option.nextRoute}
-              onClick={() => handleTabClick(option.nextRoute)}
-              isActive={activeTab === option.nextRoute}
+              onClick={handleTabClick}
+              isActive={activeTab === option.optionText}
             />
           ))}
         </div>
