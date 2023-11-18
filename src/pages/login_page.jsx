@@ -36,26 +36,11 @@ const LoginPage = () => {
   };
 
   const handleLogin = () => {
-    const isUsernameValidResult = isUsernameValid(username);
-    const isPasswordValidResult = isPasswordValid(password);
-
-    if (isUsernameValidResult && isPasswordValidResult) {
-      if (username === "aetom23" && password === "Aetom@1234") {
-        navigate("/UserSide");
-      } else if (username === "anasvhora8" && password === "Anas@2906") {
-        navigate("/AdminSide");
-      } else {
-        setErrorMsgClass("displayErrorMsg");
-      }
-    } else {
-      setErrorMsgClass("displayErrorMsg");
-    }
     toast.promise(handleHttpLogin, {
       pending: "Processing...",
-      success: "Login Sucessful",
-      error: "Login Failed",
-    });
-    console.log("Login Processing");
+      success: "Login Successful",
+      error: "Login Failed"
+    })
   };
 
   const handleSignup = () => {
@@ -81,10 +66,11 @@ const LoginPage = () => {
         );
 
         if (response.status === 200) {
-          setTimeout(() => {
-            navigate("/");
-          }, 4000);
-          resolve(response.data);
+          resolve(
+            setTimeout(() => {
+              navigate("/Userside")
+            }, 2000)
+            );
         } else {
           reject("Login Failed");
         }

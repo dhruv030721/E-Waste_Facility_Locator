@@ -21,13 +21,8 @@ const router = createBrowserRouter([
     element: <SignupPage />,
   },
   {
-<<<<<<< HEAD
-    path: "/userdashboard",
-    element: <UserDashboardPage />,
-=======
     path: "/UserSide",
     element: <UserSide />,
->>>>>>> origin/main
   },
   {
     path: "/contact",

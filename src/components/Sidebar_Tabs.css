@@ -17,6 +17,7 @@
   height: 3em;
   color: white;
   text-decoration: none !important;
+  font-family: var(--poppins);
 }
 
 .sideBarOption img {

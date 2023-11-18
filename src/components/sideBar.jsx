@@ -3,8 +3,15 @@ import CustomButton from "./form_button";
 import SidebarTabs from "./Sidebar_Tabs";
 import userAvatar from "../assets/Images/userAvatar.png";
 import "./sideBar.css";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
+  const navigate = useNavigate();
+  const handleLogout = ()=>{
+    navigate('/');
+  }
+
+
   return (
     <div className="SidebarMainDiv">
       <div className="LogoDetailsTabsContainer">
@@ -30,7 +37,7 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
         </div>
       </div>
       <div className="LogoutBtnDIv">
-        <CustomButton text={"Log out"} className={"LogOutButton"} />
+        <CustomButton text={"Log out"} bgColor={"primary"} className={"LogOutButton"} onclick={handleLogout}/>
       </div>
     </div>
   );

@@ -3,16 +3,16 @@
   color: black;
   border-radius: 20px;
   width: 25%;
-  min-height: 20vh;
-  padding: 10px;
-
+  min-height: 18vh;
+  padding: 20px;
+  font-family: var(--poppins);
   display: flex;
   flex-direction: column;
   align-self: center;
 }
 
 .CustomCardHeadings > span {
-  font-size: large;
+  font-size: medium;
   color: rgba(0, 0, 0, 0.7);
   font-weight: 600;
 }
