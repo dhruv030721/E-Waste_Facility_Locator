@@ -32,7 +32,7 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
         </div>
       </div>
       <div className="LogoutBtnDIv">
-        <CustomButton text={"Logout"} className={"LogOutButton"} />
+        <CustomButton text={"Log out"} className={"LogOutButton"} />
       </div>
     </div>
   );
