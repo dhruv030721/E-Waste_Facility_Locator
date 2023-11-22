@@ -43,11 +43,11 @@
   font-weight: bold;
 }
 
-.LogoutBtnDIv{
+.LogoutBtnDIv {
   width: 70%;
 }
 
-.LogOutButton {
+.LogOutButton:hover::after {
   background-color: #920505 !important;
   min-width: 5em;
   font-size: medium;

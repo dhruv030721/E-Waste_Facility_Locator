@@ -7,10 +7,9 @@ import { useNavigate } from "react-router-dom";
 
 const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
   const navigate = useNavigate();
-  const handleLogout = ()=>{
-    navigate('/');
-  }
-
+  const handleLogout = () => {
+    navigate("/");
+  };
 
   return (
     <div className="SidebarMainDiv">
@@ -37,7 +36,12 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
         </div>
       </div>
       <div className="LogoutBtnDIv">
-        <CustomButton text={"Log out"} bgColor={"primary"} className={"LogOutButton"} onclick={handleLogout}/>
+        <CustomButton
+          text={"Log out"}
+          bgColor={"secondary"}
+          className={"LogOutButton"}
+          onclick={handleLogout}
+        />
       </div>
     </div>
   );

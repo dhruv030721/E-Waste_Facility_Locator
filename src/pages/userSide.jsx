@@ -6,6 +6,7 @@ import "./userSide.css";
 import { useState } from "react";
 import UserDashboard from "../components/UserDashboard";
 import Locate from "./Locate";
+import UserSettings from "../components/userSettings";
 
 const UserSide = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
