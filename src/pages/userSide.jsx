@@ -12,7 +12,6 @@ const UserSide = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
 
   const handleTabClick = (tabName) => {
-    console.log("Tab clicked:", tabName);
     setActiveTab(tabName);
   };
 

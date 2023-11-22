@@ -6,7 +6,7 @@
   font-weight: 500;
   border-radius: 20px;
   font-size: 16px;
-  font-family: "poppins";
+  font-family: var(--poppins);
   padding: 4px 10px 5px 16px;
   cursor: pointer;
   position: relative;
