@@ -6,6 +6,7 @@ import UserSide from "./pages/userSide";
 import AboutPage from "./pages/about_page";
 import ContactPage from "./pages/contact_page";
 import LocateFacilityPage from "./pages/locate_facility";
+import AdminSide from "./pages/adminSide";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/UserSide",
     element: <UserSide />,
+  },
+  {
+    path: "/AdminSide",
+    element: <AdminSide />,
   },
   {
     path: "/contact",

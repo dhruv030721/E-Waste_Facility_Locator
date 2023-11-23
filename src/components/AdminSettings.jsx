@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Field from "./InputFields";
 import ProfilePic from "./ProfilePic";
-import "./UserSettings.css";
+import "./AdminSettings.css";
 import LockTile from "./LockTile";
 import CustomButton from "./form_button";
 
-const UserSettings = () => {
+const AdminSettings = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [username, setUsername] = useState("");
@@ -77,14 +77,27 @@ const UserSettings = () => {
   };
 
   return (
-    <div className="UserSettingsMainDiv">
-      <div className="UserProfilePicDiv">
+    <div className="AdminSettingsMainDiv">
+      <div className="AdminProfilePicDiv">
         <ProfilePic />
       </div>
       <div className="MainSettingsDiv">
         <div className="fourinputcontainer">
           <div className="InputLabelFieldDiv">
-            <label htmlFor="name">Display Name</label>
+            <label htmlFor="name">FACILITY NAME</label>
+
+            <Field
+              placeholder={"Name"}
+              type={"Text"}
+              value={name}
+              onChange={handleNameChange}
+              isValid={nameValid}
+              validationMessage={"Can't be an empty."}
+            />
+          </div>
+
+          <div className="InputLabelFieldDiv">
+            <label htmlFor="phone no">ADMIN NAME</label>
 
             <Field
               placeholder={"Name"}
@@ -127,7 +140,14 @@ const UserSettings = () => {
               validationMessage={"Enter a valid email address."}
             />
           </div>
-
+        </div>
+        <div className="LockSettingsMainDiv">
+          <label htmlFor="rewards">LOCK SETTINGS</label>
+          <LockTile
+            TileTextDetail="Does not allow to change any settings unless OTP."
+            lockedStateText="Locked"
+            UnlockedStateText="Unlocked"
+          />
           <div className="InputLabelFieldDiv">
             <label htmlFor="phone no">PHONE NO</label>
 
@@ -140,14 +160,6 @@ const UserSettings = () => {
               validationMessage="Enter a valid phone number"
             />
           </div>
-        </div>
-        <div className="LockrewardMainDiv">
-          <label htmlFor="rewards">LOCK REWARD POINTS</label>
-          <LockTile
-            TileTextDetail="Does not allow yourself to spend your reward points"
-            lockedStateText="Locked"
-            UnlockedStateText="Unlocked"
-          />
         </div>
         <div className="ChangePass_2FA_Div">
           <div className="ChangepassTile">
@@ -198,7 +210,7 @@ const UserSettings = () => {
               onclick={handleDiscard}
             />
             <CustomButton
-              text={"Save \nChanges"}
+              text={"Save Changes"}
               bgColor={"secondary"}
               onclick={handleSave}
             />
@@ -209,4 +221,4 @@ const UserSettings = () => {
   );
 };
 
-export default UserSettings;
+export default AdminSettings;

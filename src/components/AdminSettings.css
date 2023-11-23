@@ -33,12 +33,12 @@ label {
   color: #999999;
 }
 
-.LockrewardMainDiv {
+.LockSettingsMainDiv {
   width: 30%;
-  height: 22.3em;
+  height: 17.2em;
 }
 
-.LockrewardMainDiv .Two_FA_Tile {
+.Two_FA_Tile {
   width: 100%;
   height: 9rem;
 }
