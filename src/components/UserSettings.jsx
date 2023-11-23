@@ -3,6 +3,7 @@ import Field from "./InputFields";
 import ProfilePic from "./ProfilePic";
 import "./UserSettings.css";
 import LockTile from "./LockTile";
+import CustomButton from "./form_button";
 
 const UserSettings = () => {
   const [name, setName] = useState("");
@@ -10,13 +11,15 @@ const UserSettings = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [newPassword, setnewPassword] = useState("");
+  const [confirmNewPassword, setConfirmPassword] = useState("");
   const [nameValid, setNameValid] = useState(true);
   const [phoneValid, setPhoneValid] = useState(true);
   const [usernameValid, setUsernameValid] = useState(true);
   const [emailValid, setEmailValid] = useState(true);
   const [passwordValid, setPasswordValid] = useState(true);
-  const [confirmPasswordValid, setConfirmPasswordValid] = useState(true);
+  const [NewPasswordValid, setNewPasswordValid] = useState(true);
+  const [confirmNewPasswordValid, setConfirmPasswordValid] = useState(true);
 
   const isUsernameValid = (username) => {
     return /^[a-z0-9_]+$/.test(username);
@@ -48,15 +51,29 @@ const UserSettings = () => {
   };
 
   const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-    setPasswordValid(isPasswordValid(newPassword));
+    const Password = e.target.value;
+    setPassword(Password);
+    setPasswordValid(isPasswordValid(Password));
   };
 
-  const handleConfirmPasswordChange = (e) => {
+  const handleNewPasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setnewPassword(newPassword);
+    setNewPasswordValid(isPasswordValid(newPassword));
+  };
+
+  const handleConfirmNewPasswordChange = (e) => {
     const newConfirmPassword = e.target.value;
-    setConfirmPasswordValid(newConfirmPassword);
+    setConfirmPasswordValid(newPassword === newConfirmPassword);
     setConfirmPassword(newConfirmPassword);
+  };
+
+  const handleDiscard = () => {
+    console.log("Discarded all changes.");
+  };
+
+  const handleSave = () => {
+    console.log("Saved all changes.");
   };
 
   return (
@@ -67,7 +84,7 @@ const UserSettings = () => {
       <div className="MainSettingsDiv">
         <div className="fourinputcontainer">
           <div className="InputLabelFieldDiv">
-            <label htmlFor="username">Display Name</label>
+            <label htmlFor="name">Display Name</label>
 
             <Field
               placeholder={"Name"}
@@ -124,8 +141,68 @@ const UserSettings = () => {
             />
           </div>
         </div>
-        <div className="Lockrewardspenttile">
-          <LockTile />
+        <div className="LockrewardMainDiv">
+          <label htmlFor="rewards">LOCK REWARD POINTS</label>
+          <LockTile
+            TileTextDetail="Does not allow yourself to spend your reward points"
+            lockedStateText="Locked"
+            UnlockedStateText="Unlocked"
+          />
+        </div>
+        <div className="ChangePass_2FA_Div">
+          <div className="ChangepassTile">
+            <label htmlFor="changepass">CHANGE PASSWORD</label>
+            <div className="pass_fields_Container">
+              <Field
+                placeholder={"Current Password"}
+                type={"Password"}
+                value={password}
+                onChange={handlePasswordChange}
+                isValid={passwordValid}
+                validationMessage={"Enter your current password"}
+              />
+              <Field
+                placeholder={"New Password"}
+                type={"Password"}
+                value={newPassword}
+                onChange={handleNewPasswordChange}
+                isValid={NewPasswordValid}
+                validationMessage={"Enter Valid Password"}
+              />
+
+              <Field
+                placeholder={"Confirm New Password"}
+                type={"Password"}
+                value={confirmNewPassword}
+                onChange={handleConfirmNewPasswordChange}
+                isValid={confirmNewPasswordValid}
+                validationMessage="Both passwords does not match."
+              />
+            </div>
+          </div>
+          <div className="Two_FA_Tile">
+            <label htmlFor="username">2 FACTOR AUTHENTICATION</label>
+            <LockTile
+              TileTextDetail="Requires an OTP to change the password."
+              lockedStateText="2FA On"
+              UnlockedStateText="2FA Off"
+            />
+          </div>
+        </div>
+        <div className="ButtonDivMain">
+          <div className="Buttons_Containers">
+            <CustomButton
+              text={"Dsicard Changes"}
+              bgColor={"primary"}
+              className={"LogOutButton"}
+              onclick={handleDiscard}
+            />
+            <CustomButton
+              text={"Save Changes"}
+              bgColor={"secondary"}
+              onclick={handleSave}
+            />
+          </div>
         </div>
       </div>
     </div>

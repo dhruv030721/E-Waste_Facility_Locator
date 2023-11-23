@@ -10,8 +10,8 @@ import PhoneIcon from "../assets/images/PhoneIcon.svg";
 import EmailIcon from "../assets/images/EmailIcon.svg";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SignupPage = () => {
   const [step, setStep] = useState(1);
@@ -69,8 +69,8 @@ const SignupPage = () => {
     toast.promise(handleHttpSignup, {
       pending: "Processing...",
       success: "Signup Sucessful",
-      error: "Signup Failed"
-    })
+      error: "Signup Failed",
+    });
     console.log("Form submitted!");
   };
 
@@ -94,21 +94,21 @@ const SignupPage = () => {
 
   const handleConfirmPasswordChange = (e) => {
     const newConfirmPassword = e.target.value;
-    setConfirmPasswordValid(newConfirmPassword);
+    setConfirmPasswordValid(password === newConfirmPassword);
     setConfirmPassword(newConfirmPassword);
   };
 
   const handleLogin = () => {
-    navigate('/login')
-  }
+    navigate("/login");
+  };
 
   const handleHttpSignup = async () => {
-    return new Promise(async(resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       try {
         const headers = {
           "Content-Type": "application/json",
         };
-  
+
         const response = await axios.post(
           "http://127.0.0.1:8000/api/v1/signup",
           {
@@ -123,7 +123,6 @@ const SignupPage = () => {
           }
         );
 
-  
         if (response.status === 201) {
           setTimeout(() => {
             navigate("/login");
@@ -132,7 +131,7 @@ const SignupPage = () => {
         } else {
           reject("Signup Failed");
         }
-  
+
         console.log(response.status);
         console.log("HTTP POST Request Response:", response.data);
       } catch (error) {
@@ -142,7 +141,7 @@ const SignupPage = () => {
         console.error("Error submitting form:", error);
         reject(error);
       }
-    })
+    });
   };
 
   return (
@@ -186,7 +185,9 @@ const SignupPage = () => {
             <div className="LoginRedirectDiv">
               <span className="ClickHereLinkText">
                 {" "}
-                <a onClick={handleLogin}>Already have an account? Click here.</a>
+                <a onClick={handleLogin}>
+                  Already have an account? Click here.
+                </a>
               </span>
             </div>
           </>
@@ -280,7 +281,7 @@ const SignupPage = () => {
           </>
         )}
       </div>
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 };
