@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-async-promise-executor */
 import "./login_page.css";
 import NavBar from "../components/navbar";
@@ -39,8 +40,8 @@ const LoginPage = () => {
     toast.promise(handleHttpLogin, {
       pending: "Processing...",
       success: "Login Successful",
-      error: "Login Failed"
-    })
+      error: "Login Failed",
+    });
   };
 
   const handleSignup = () => {
@@ -68,9 +69,9 @@ const LoginPage = () => {
         if (response.status === 200) {
           resolve(
             setTimeout(() => {
-              navigate("/Userside")
+              navigate("/Userside");
             }, 2000)
-            );
+          );
         } else {
           reject("Login Failed");
         }
@@ -90,7 +91,6 @@ const LoginPage = () => {
         <div className="Texts">
           <span className="WelcomeText"> Welcome </span>
           <span className="WeAreGladText">
-            {" "}
             We are glad to see you back with us!
           </span>
         </div>

@@ -2,7 +2,6 @@ import { useState } from "react";
 import DropdownCommon from "./DropdownCommon";
 import CustomInfoCard from "./CustomInfoCard";
 import RewardsIcon from "../assets/Images/RewardsIcon.svg";
-import FacilityIcon from "../assets/Images/FacilityIcon.svg";
 import "./UserDashboard.css";
 import BarChart from "./activity_graph";
 
@@ -33,7 +32,7 @@ const UserDashboard = () => {
   ];
 
   return (
-    <div className="UserDashboardMainDIv">
+    <div className="AdminDashboardMainDIv">
       <DropdownCommon
         selectedOption={selectedTimeFrame}
         setSelectedOption={setSelectedTimeFrame}
@@ -45,17 +44,12 @@ const UserDashboard = () => {
 
       <div className="InfoCardsDiv">
         <CustomInfoCard
-          HeadingText={"Reward points"}
+          HeadingText={"Reward points given"}
           ImagePath={RewardsIcon}
-          texts={"82"}
+          texts={"820"}
         />
-        <CustomInfoCard HeadingText={"E-Waste Submitted"} texts={"3.82 kg"} />
-        <CustomInfoCard
-          HeadingText={"Facilities Visited"}
-          ImagePath={FacilityIcon}
-          texts={"3"}
-        />
-        <CustomInfoCard HeadingText={"E-Waste Submitted"} texts={"4.89 kg"} />
+        <CustomInfoCard HeadingText={"E-Waste Collected"} texts={"15 kg"} />
+        <CustomInfoCard HeadingText={"E-Waste Collected"} texts={"40.89 kg"} />
       </div>
 
       <div className="ActivityGraphDashboardDiv">

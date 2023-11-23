@@ -1,5 +1,5 @@
-@import './environment';
+@import "./environment";
 
-*{
-    font-family: var(--smooch-sans);
+* {
+  font-family: var(--poppins);
 }

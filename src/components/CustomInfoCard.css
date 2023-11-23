@@ -25,7 +25,7 @@
 }
 
 .CustomCard > span {
-  font-family: "poppins";
+  font-family: var(--poppins);
   font-size: x-large;
   font-weight: bold;
 }

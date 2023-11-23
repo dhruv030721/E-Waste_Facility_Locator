@@ -1,14 +1,14 @@
 import SideBar from "../components/sideBar";
 import dashboardIcon from "../assets/Images/DashboardIcon.svg";
-import locationIcon from "../assets/Images/locationIcon.png";
+import HistoryIcon from "../assets/Images/HistoryIcon.svg";
 import settingsIcon from "../assets/Images/settingsIcon.svg";
-import "./userSide.css";
+import "./adminSide.css";
 import { useState } from "react";
-import UserDashboard from "../components/UserDashboard";
-import LocateFacilityPage from "./locate_facility";
-import UserSettings from "../components/userSettings";
+import AdminDashboard from "../components/AdminDashboard";
+import AdminHistory from "../components/AdminHistory";
+import AdminSettings from "../components/AdminSettings";
 
-const UserSide = () => {
+const AdminSide = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
 
   const handleTabClick = (tabName) => {
@@ -21,8 +21,8 @@ const UserSide = () => {
       optionText: "Dashboard",
     },
     {
-      imagePath: locationIcon,
-      optionText: "Locate",
+      imagePath: HistoryIcon,
+      optionText: "History",
     },
     {
       imagePath: settingsIcon,
@@ -43,12 +43,12 @@ const UserSide = () => {
         <div className="TabHeading">
           <span>{activeTab}</span>
         </div>
-        {activeTab === "Dashboard" && <UserDashboard />}
-        {activeTab === "Locate" && <LocateFacilityPage />}
-        {activeTab === "Settings" && <UserSettings />}
+        {activeTab === "Dashboard" && <AdminDashboard />}
+        {activeTab === "History" && <AdminHistory />}
+        {activeTab === "Settings" && <AdminSettings />}
       </div>
     </div>
   );
 };
 
-export default UserSide;
+export default AdminSide;
