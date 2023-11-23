@@ -1,6 +1,6 @@
 import SideBar from "../components/sideBar";
 import dashboardIcon from "../assets/Images/DashboardIcon.svg";
-import locationIcon from "../assets/Images/locationIcon.png";
+import HistoryIcon from "../assets/Images/HistoryIcon.svg";
 import settingsIcon from "../assets/Images/settingsIcon.svg";
 import "./adminSide.css";
 import { useState } from "react";
@@ -21,7 +21,7 @@ const AdminSide = () => {
       optionText: "Dashboard",
     },
     {
-      imagePath: locationIcon,
+      imagePath: HistoryIcon,
       optionText: "History",
     },
     {

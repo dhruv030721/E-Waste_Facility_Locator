@@ -5,7 +5,7 @@ import settingsIcon from "../assets/Images/settingsIcon.svg";
 import "./userSide.css";
 import { useState } from "react";
 import UserDashboard from "../components/UserDashboard";
-import Locate from "./Locate";
+import LocateFacilityPage from "./locate_facility";
 import UserSettings from "../components/userSettings";
 
 const UserSide = () => {
@@ -44,7 +44,7 @@ const UserSide = () => {
           <span>{activeTab}</span>
         </div>
         {activeTab === "Dashboard" && <UserDashboard />}
-        {activeTab === "Locate" && <Locate />}
+        {activeTab === "Locate" && <LocateFacilityPage />}
         {activeTab === "Settings" && <UserSettings />}
       </div>
     </div>

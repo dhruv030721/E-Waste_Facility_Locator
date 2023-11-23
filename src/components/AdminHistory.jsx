@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./AdminHistory.css";
 import DropdownCommon from "./DropdownCommon";
 import CustomUserCard from "./CustomUserCard";
 import UserAvatar from "../assets/Images/UserAvatar1.svg";
