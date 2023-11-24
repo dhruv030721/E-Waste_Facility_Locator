@@ -106,7 +106,7 @@ const LoginPage = () => {
             }}
             isValid={usernameValid}
             validationMessage={
-              "Should start with lowercase only. Should not contain any space & Uppercase character."
+              "Should start with lowercase only. Should not contain any space, Uppercase or special character."
             }
           />
 
