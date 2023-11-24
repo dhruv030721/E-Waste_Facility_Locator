@@ -88,5 +88,23 @@ input[type="number"] {
   transform: translateX(-50%) rotate(10deg);
   border-width: 10px;
   border-style: solid;
-  border-color: transparent transparent white transparent; /* Adjust the color as needed */
+  border-color: transparent transparent white transparent;
+}
+
+@media (max-width: 767px) {
+  .InputFields {
+    flex-direction: column;
+  }
+
+  .ValidationMessage {
+    position: inherit;
+    top: 10px;
+    left: 0px;
+  }
+
+  .ValidationMessage::before {
+    top: -19px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
