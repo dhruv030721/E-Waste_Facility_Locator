@@ -31,6 +31,7 @@
   padding-left: 30px;
   transform: scale(1, 1);
   transition: transform 0.2s linear;
+  cursor: pointer;
 }
 
 .nav-items li a {
