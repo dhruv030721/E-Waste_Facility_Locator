@@ -204,9 +204,9 @@ const AdminSettings = () => {
         <div className="ButtonDivMain">
           <div className="Buttons_Containers">
             <CustomButton
-              text={"Dsicard Changes"}
+              text={"Discard Changes"}
               bgColor={"primary"}
-              className={"LogOutButton"}
+              className={"DiscardChanges"}
               onclick={handleDiscard}
             />
             <CustomButton

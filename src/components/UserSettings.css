@@ -5,7 +5,6 @@
 .MainSettingsDiv {
   margin-top: 4%;
   display: flex;
-  flex-direction: row;
   gap: 20px;
 }
 
@@ -74,4 +73,36 @@ label {
 
 .Buttons_Containers {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .MainSettingsDiv {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fourinputcontainer {
+    max-width: 50vw;
+  }
+
+  .LockrewardMainDiv {
+    width: 70vw;
+  }
+
+  .ChangePass_2FA_Div {
+    width: 70vw;
+  }
+
+  .ButtonDivMain {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70vw !important;
+  }
+
+  .ButtonDivMain > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70vw;
+  }
 }
