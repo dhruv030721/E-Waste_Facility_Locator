@@ -79,3 +79,25 @@
   top: 10px;
   opacity: 0.5;
 }
+
+@media (max-width: 767px) {
+  .LoginMainDiv {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .ClickHereLinkText::before {
+    width: 150px;
+    background-color: white;
+    left: -165px;
+    opacity: 1;
+  }
+
+  .ClickHereLinkText::after {
+    width: 90px;
+    background-color: white;
+    right: -95px;
+    opacity: 1;
+  }
+}

@@ -1,13 +1,11 @@
-import NavBar from "../components/navbar";
-
-
-
 const LocateFacilityPage = () => {
-    return ( 
-        <>
-            <NavBar></NavBar>
-        </>
-     );
-}
- 
+  return (
+    <>
+      <div className="locateFacilityMainDiv">
+        <span>Just a testing sentance.</span>
+      </div>
+    </>
+  );
+};
+
 export default LocateFacilityPage;
