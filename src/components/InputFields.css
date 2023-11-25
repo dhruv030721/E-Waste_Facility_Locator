@@ -94,6 +94,7 @@ input[type="number"] {
 @media (max-width: 767px) {
   .InputFields {
     flex-direction: column;
+    max-width: 70vw;
   }
 
   .ValidationMessage {

@@ -11,6 +11,7 @@
   cursor: pointer;
   position: relative;
 }
+
 .dropdown-container.expanded {
   border-radius: 20px 20px 0 0;
 }
@@ -83,4 +84,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .dropdown-container {
+    max-width: 70vw;
+  }
+
+  .dropdown-container .dropdown-options.expanded {
+    max-width: 70vw;
+  }
 }

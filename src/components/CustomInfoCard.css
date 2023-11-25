@@ -29,3 +29,10 @@
   font-size: x-large;
   font-weight: bold;
 }
+
+@media (max-width: 767px) {
+  .commonCardContainer {
+    width: 100%;
+    margin-bottom: 10%;
+  }
+}

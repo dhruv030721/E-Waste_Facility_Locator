@@ -77,3 +77,31 @@
   width: 100%; /* Make sure X-axis labels span the entire width */
   margin-top: 10px;
 }
+
+@media (max-width: 767px) {
+  .ActivityGraphMainDiv {
+    width: 90%;
+    position: relative;
+  }
+
+  .YandBarDiv {
+    align-items: center;
+  }
+
+  .y-axis {
+    font-size: small;
+  }
+
+  .ProgressBar {
+    max-height: 80%;
+    max-width: 10px;
+  }
+
+  .line-vertical-wrapper {
+    align-items: center;
+  }
+
+  .MainBarContainere {
+    overflow-x: auto;
+  }
+}
