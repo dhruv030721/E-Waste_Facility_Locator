@@ -5,6 +5,7 @@
   font-family: var(--poppins);
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .copyright-text p {
