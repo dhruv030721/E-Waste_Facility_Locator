@@ -2,6 +2,7 @@
 import CustomButton from "./form_button";
 import SidebarTabs from "./Sidebar_Tabs";
 import userAvatar from "../assets/Images/userAvatar.png";
+import LogoutIcon from "../assets/Images/logoutIcon.png";
 import "./sideBar.css";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const SideBar = ({ activeTab, handleTabClick, dashboardOptions }) => {
       </div>
       <div className="LogoutBtnDIv">
         <CustomButton
+          IconPath={LogoutIcon}
           text={"Log out"}
           bgColor={"secondary"}
           className={"LogOutButton"}

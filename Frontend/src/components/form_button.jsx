@@ -2,7 +2,7 @@
 import "./form_button.css";
 
 /* eslint-disable react/prop-types */
-const CustomButton = ({ className, text, onclick, bgColor }) => {
+const CustomButton = ({ className, text, onclick, bgColor, IconPath }) => {
   let bgColorClass;
   if (bgColor === "primary") {
     bgColorClass = "PrimaryBgColor";
@@ -16,7 +16,10 @@ const CustomButton = ({ className, text, onclick, bgColor }) => {
         className={`CustomBtn ${bgColorClass} ${className}`}
         onClick={onclick}
       >
-        {text}
+        <div className="MobileImageDiv">
+          <img src={IconPath} alt="ImageIcon" />
+        </div>
+        <div className="CustomButtonTextDiv">{text}</div>
       </button>
     </div>
   );

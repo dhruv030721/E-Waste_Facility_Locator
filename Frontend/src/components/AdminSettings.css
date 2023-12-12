@@ -1,11 +1,10 @@
-.UserSettingsMainDiv {
+.AdminSettingsMainDiv {
   font-family: var(--poppins);
 }
 
 .MainSettingsDiv {
   margin-top: 4%;
   display: flex;
-  flex-direction: row;
   gap: 20px;
 }
 
@@ -74,4 +73,10 @@ label {
 
 .Buttons_Containers {
   width: 100%;
+}
+
+@media (max-width: 767px) {
+  .LockSettingsMainDiv {
+    width: 70vw;
+  }
 }

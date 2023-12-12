@@ -1,6 +1,8 @@
 .UserSide {
   background-color: #141b2b;
   display: flex;
+  position: relative;
+  height: 100vh;
 }
 
 .SideBarContainer {
@@ -27,4 +29,11 @@
     #141b2b 95.69%
   );
   border-image-slice: 10%;
+}
+
+@media (max-width: 767px) {
+  .MainContent {
+    overflow: auto;
+    max-width: 80vw;
+  }
 }
